@@ -24,25 +24,26 @@
     "@electron-forge/maker-deb": "^6.0.0-beta.54",
     "@electron-forge/maker-rpm": "^6.0.0-beta.54",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
+    "@electron-forge/maker-wix": "^6.0.0-beta.54",
     "@electron-forge/maker-zip": "^6.0.0-beta.54",
-    "electron": "^11.1.1"
+    "electron": "^11.1.1",
+    "electron-wix-msi": "^3.0.6"
   },
   "dependencies": {
     "electron-prompt": "^1.6.0",
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-squirrel-startup": "^1.0.0",
+    "exe-icon-extractor": "^1.0.8"
   },
   "config": {
     "forge": {
       "packagerConfig": {
-        "icon": "icon.ico"
+        "icon": "icon.ico",
+        "win32metadata": {
+          "ProductName": "KuesaChat",
+          "CompanyName": "kuesasan"
+        }
       },
       "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "KuesaChat"
-          }
-        },
         {
           "name": "@electron-forge/maker-zip",
           "platforms": [
@@ -56,6 +57,21 @@
         {
           "name": "@electron-forge/maker-rpm",
           "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-wix",
+          "config": {
+            "name": "KuesaChat",
+            "manufacturer": "kuesasan",
+            "description": "A lightweight Twitch chat client",
+            "iconPath": "D:\\Programming\\kuesachat\\icon.ico",
+            "ui": {
+              "chooseDirectory": true,
+              "images": {
+                "banner": "D:\\Programming\\kuesachat\\widepeepoHappy.png"
+              }
+            }
+          }
         }
       ]
     }
