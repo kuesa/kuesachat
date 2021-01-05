@@ -5,7 +5,6 @@
   "main": "main.js",
   "scripts": {
     "start": "electron-forge start",
-    "test": "D:/Programming/kuesachat/node_modules/electron-prebuilt/dist/electron.exe .",
     "package": "electron-forge package",
     "make": "electron-forge make"
   },

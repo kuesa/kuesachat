@@ -1,5 +1,5 @@
 # KuesaChat
-A super-duper lightweight chat client for Twitch designed for streamers.
+A super-duper lightweight chat client for Twitch designed for streamers, with built-in BTTV/FFZ emotes.
 ![](https://i.imgur.com/J0Ss0hB.png)
 ![](https://i.imgur.com/ONyKRKf.png)
 ## How It Works
