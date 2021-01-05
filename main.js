@@ -1,4 +1,4 @@
-const { app, BrowserWindow, session, Menu } = require('electron');
+const { app, BrowserWindow, session, Menu, shell } = require('electron');
 const prompt = require('electron-prompt');
 const path = require('path');
 const fs = require('fs');
@@ -87,6 +87,12 @@ function createWindow() {
       win.loadURL(`https://www.twitch.tv/popout/${settings.stream}/chat`).then(() => {
         // Set title of window
         win.setTitle('KuesaChat - ' + settings.stream);
+
+        // Clicking URLs should open externally.
+        win.webContents.on('new-window', (e, url) => {
+          e.preventDefault();
+          shell.openExternal(url);
+        });
 
         // Sets dark theme
         win.webContents.executeJavaScript("window.localStorage.setItem('twilight.theme', 1);");
