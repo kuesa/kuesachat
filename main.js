@@ -15,14 +15,16 @@ const template = [{
 
         prompt({
           title: 'Enter Stream',
-          lable: 'Stream:',
+          label: 'Stream:',
           value: 'kuesasan',
           inputAttrs: {
             type: 'text'
           },
           type: 'input',
           alwaysOnTop: true,
-          minHeight: 160
+          height: 180,
+          minHeight: 180,
+          icon: 'icon.ico'
         }).then((r) => {
           if (r) {
             settings.stream = r;
@@ -49,7 +51,7 @@ function createWindow() {
       nodeIntegration: true
     },
     title: 'KuesaChat',
-    icon: path.join(__dirname, 'icon.png')
+    icon: path.join(__dirname, 'icon.ico')
   });
 
   // Load user config
