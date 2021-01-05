@@ -1,0 +1,62 @@
+{
+  "name": "kuesachat",
+  "version": "1.0.0",
+  "description": "A barebones twitch chat client",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "test": "D:/Programming/kuesachat/node_modules/electron-prebuilt/dist/electron.exe .",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuesa/kuesachat.git"
+  },
+  "keywords": [],
+  "author": "kuesasan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kuesa/kuesachat/issues"
+  },
+  "homepage": "https://github.com/kuesa/kuesachat#readme",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.54",
+    "@electron-forge/maker-deb": "^6.0.0-beta.54",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
+    "@electron-forge/maker-zip": "^6.0.0-beta.54",
+    "electron": "^11.1.1"
+  },
+  "dependencies": {
+    "electron-prompt": "^1.6.0",
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "kuesachat"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}
